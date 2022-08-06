@@ -4,8 +4,10 @@ import HeaderDisconnected from "../../components/HeaderDisconnected.js";
 import Logo from '../../components/Logo.js'
 
 import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 export default function SignUp() {
-
+    const navigate = useNavigate()
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -14,6 +16,12 @@ export default function SignUp() {
     })
     async function HandleSubmit (e) {
         e.preventDefault()
+        try {
+            await axios.post('https://project-back-shortly.herokuapp.com/sign-up', {...user})
+            navigate('/')
+        } catch {
+            alert("Preencha os dados corretamente")
+        }
     }
     function ChangeInput(e) {
         setUser({...user, [e.target.name]: e.target.value})
