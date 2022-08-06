@@ -3,13 +3,16 @@ import { Container, Header } from "./style.js"
 import Logo from '../../assets/Logo.png';
 import Trophy from '../../assets/Vector.png';
 
+import { useNavigate } from "react-router-dom";
+
 export default function Ranking () {
+    const navigate = useNavigate();
     return (
         <>
             <Header>
                 <div>
                     <h1>Entrar</h1>
-                    <h1>Cadastrar-se</h1>
+                    <h1 onClick={()=> navigate('/sign-up')}>Cadastrar-se</h1>
                 </div>
             </Header>
             <Container>

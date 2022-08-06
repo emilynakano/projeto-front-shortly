@@ -10,7 +10,7 @@ export default function App () {
             <GlobalStyles />
             <Routes>
                 <Route path='/' element={<Ranking />} />
-                <Route patch='/sign-up' element={<SignUp />} />
+                <Route path='/sign-up' element={<SignUp />} />
             </Routes>
         </BrowserRouter>
     )
