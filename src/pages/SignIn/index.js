@@ -6,24 +6,23 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 export default function SignIn() {
+    
     const navigate = useNavigate()
-    const [user, setUser] = useState({
+    const [userLogin, setUserLogin] = useState({
         email: '',
         password: ''
     })
-    const [data, setData] = useState('')
     async function HandleSubmit(e) {
         e.preventDefault()
         try {
-            const res = await axios.post("https://project-back-shortly.herokuapp.com/sign-in", {...user})
-            console.log(res.data)
+            const res = await axios.post("https://project-back-shortly.herokuapp.com/sign-in", {...userLogin})
             navigate('/')
         } catch {
             alert("Preencha os dados corretamente")
         }
     }
     function ChangeInput(e) {
-        setUser({...user, [e.target.name]: e.target.value})
+        setUserLogin({...userLogin, [e.target.name]: e.target.value})
     }
     return (
         <>
@@ -35,14 +34,14 @@ export default function SignIn() {
                     type="email" 
                     placeholder="E-mail" 
                     name="email" 
-                    value={user.email} 
+                    value={userLogin.email} 
                     onChange={ChangeInput}
                 />
                 <input 
                     type="password" 
                     placeholder="Senha" 
                     name="password" 
-                    value={user.password} 
+                    value={userLogin.password} 
                     onChange={ChangeInput}
                 />
                 <button onClick={HandleSubmit} type="submit">

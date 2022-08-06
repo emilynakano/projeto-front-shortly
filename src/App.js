@@ -5,15 +5,23 @@ import SignUp from './pages/SignUp/index.js';
 import SignIn from './pages/SignIn/index.js'
 
 import GlobalStyles from './themes/globalStyles.js';
+import { useState } from 'react';
+import UserContext from './contexts/UserContext.js'
 export default function App () {
+    const [user, setUser] = useState({
+        name: '',
+        token: ''
+    });
     return (
         <BrowserRouter>
             <GlobalStyles />
-            <Routes>
-                <Route path='/' element={<Ranking />} />
-                <Route path='/sign-up' element={<SignUp />} />
-                <Route path='/sign-in' element={<SignIn />} />
-            </Routes>
+            <UserContext.Provider value={{user, setUser}}>
+                <Routes>
+                    <Route path='/' element={<Ranking />} />
+                    <Route path='/sign-up' element={<SignUp />} />
+                    <Route path='/sign-in' element={<SignIn />} />
+                </Routes>
+            </UserContext.Provider>
         </BrowserRouter>
     )
 }
