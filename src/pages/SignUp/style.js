@@ -11,7 +11,7 @@ const Container = styled.div `
         display:flex;
         flex-direction: column;
         gap: 10px;
-        width: 70%
+        width: 70%;
     }
     input {
         height: 60px;
@@ -21,6 +21,23 @@ const Container = styled.div `
         border-radius: 12px;
 
         padding:20px;
+    }
+    button {
+        text-decoration:none;
+        background-color:#5D9040;
+        border-radius:12px;
+        border: none;
+        width: 182px;
+        height: 60px;
+        margin: 0 auto;
+    }
+    span {
+        font-family: 'Lexend Deca';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        color: #FFFFFF;
     }
 `;
 export {Container}

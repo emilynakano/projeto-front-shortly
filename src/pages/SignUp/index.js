@@ -21,10 +21,36 @@ export default function SignUp() {
             <Container>
                 <Logo />
                 <form>
-                    <input type="text" placeholder="nome" name="name" value={user.name} onChange={ChangeInput} />
-                    <input type="email" placeholder="email" name="email" value={user.email} onChange={ChangeInput} />
-                    <input type="password" placeholder="senha" name="password" value={user.password} onChange={ChangeInput} />
-                    <input type="password" placeholder="confirme a senha" name="confirmPassword" value={user.confirmPassword} onChange={ChangeInput}/>
+                    <input 
+                        type="text" 
+                        placeholder="nome" 
+                        name="name" 
+                        value={user.name}
+                        onChange={ChangeInput} 
+                    />
+                    <input 
+                        type="email" 
+                        placeholder="email" 
+                        name="email" 
+                        value={user.email} 
+                        onChange={ChangeInput} 
+                    />
+                    <input 
+                        type="password" 
+                        placeholder="senha" 
+                        name="password" 
+                        value={user.password} 
+                        onChange={ChangeInput} 
+                    />
+                    <input 
+                        type="password" 
+                        placeholder="confirme a senha" 
+                        name="confirmPassword" 
+                        value={user.confirmPassword} onChange={ChangeInput}
+                    />
+                    <button>
+                        <span>Criar Conta</span>
+                    </button>
                 </form>
             </Container>
         </>
