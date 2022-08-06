@@ -18,7 +18,7 @@ export default function SignUp() {
         e.preventDefault()
         try {
             await axios.post('https://project-back-shortly.herokuapp.com/sign-up', {...user})
-            navigate('/')
+            navigate('/sign-in')
         } catch {
             alert("Preencha os dados corretamente")
         }

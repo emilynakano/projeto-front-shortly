@@ -5,8 +5,10 @@ import { Container } from "../SignUp/style.js"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import { useContext } from "react";
 import UserContext from "../../contexts/UserContext.js";
+
 export default function SignIn() {
     const {user, setUser} = useContext(UserContext)
     const navigate = useNavigate()
