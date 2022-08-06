@@ -8,10 +8,12 @@ export default function SignIn() {
         email: '',
         password: ''
     })
+    async function HandleSubmit(e) {
+        e.preventDefault()
+    }
     function ChangeInput(e) {
         setUser({...user, [e.target.name]: e.target.value})
     }
-    console.log(user)
     return (
         <>
         <HeaderDisconnected />
@@ -32,6 +34,9 @@ export default function SignIn() {
                     value={user.password} 
                     onChange={ChangeInput}
                 />
+                <button onClick={HandleSubmit} type="submit">
+                    <span>Entrar</span>
+                </button>
             </form>
         </Container>
         </>

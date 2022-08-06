@@ -6,7 +6,7 @@ export default function HeaderDisconnected() {
     return (
         <Header>
             <div>
-                <h1>Entrar</h1>
+                <h1 onClick={()=> navigate('/sign-in')}>Entrar</h1>
                 <h1 onClick={()=> navigate('/sign-up')}>Cadastrar-se</h1>
             </div>
         </Header>
