@@ -5,13 +5,16 @@ import Logo from '../../components/Logo.js'
 
 import { useState } from "react";
 export default function SignUp() {
+
     const [user, setUser] = useState({
         name: '',
         email: '',
         password: '',
         confirmPassword: ''
     })
-    console.log(user)
+    async function HandleSubmit (e) {
+        e.preventDefault()
+    }
     function ChangeInput(e) {
         setUser({...user, [e.target.name]: e.target.value})
     }
@@ -23,32 +26,32 @@ export default function SignUp() {
                 <form>
                     <input 
                         type="text" 
-                        placeholder="nome" 
+                        placeholder="Nome" 
                         name="name" 
                         value={user.name}
                         onChange={ChangeInput} 
                     />
                     <input 
                         type="email" 
-                        placeholder="email" 
+                        placeholder="E-mail" 
                         name="email" 
                         value={user.email} 
                         onChange={ChangeInput} 
                     />
                     <input 
                         type="password" 
-                        placeholder="senha" 
+                        placeholder="Senha" 
                         name="password" 
                         value={user.password} 
                         onChange={ChangeInput} 
                     />
                     <input 
                         type="password" 
-                        placeholder="confirme a senha" 
+                        placeholder="Confirme a senha" 
                         name="confirmPassword" 
                         value={user.confirmPassword} onChange={ChangeInput}
                     />
-                    <button>
+                    <button onClick={HandleSubmit} type={'submit'}>
                         <span>Criar Conta</span>
                     </button>
                 </form>
