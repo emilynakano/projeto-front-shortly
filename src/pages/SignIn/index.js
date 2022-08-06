@@ -8,14 +8,30 @@ export default function SignIn() {
         email: '',
         password: ''
     })
+    function ChangeInput(e) {
+        setUser({...user, [e.target.name]: e.target.value})
+    }
+    console.log(user)
     return (
         <>
         <HeaderDisconnected />
         <Container>
             <Logo />
             <form>
-                <input type="email" placeholder="E-mail" name="email" value={user.email} />
-                <input type="password" placeholder="Senha" name="senha" value={user.password}/>
+                <input 
+                    type="email" 
+                    placeholder="E-mail" 
+                    name="email" 
+                    value={user.email} 
+                    onChange={ChangeInput}
+                />
+                <input 
+                    type="password" 
+                    placeholder="Senha" 
+                    name="password" 
+                    value={user.password} 
+                    onChange={ChangeInput}
+                />
             </form>
         </Container>
         </>
