@@ -1,25 +1,17 @@
-import { Container, Header } from "./style.js"
+import { Container } from "./style.js"
 
-import Logo from '../../assets/Logo.png';
+import HeaderDisconnected from "../../components/HeaderDisconnected.js";
+import Logo from "../../components/Logo.js";
+
 import Trophy from '../../assets/Vector.png';
 
-import { useNavigate } from "react-router-dom";
-
 export default function Ranking () {
-    const navigate = useNavigate();
+    
     return (
         <>
-            <Header>
-                <div>
-                    <h1>Entrar</h1>
-                    <h1 onClick={()=> navigate('/sign-up')}>Cadastrar-se</h1>
-                </div>
-            </Header>
+            <HeaderDisconnected />
             <Container>
-                <div className="logo">
-                    <h1>Shortly</h1>
-                    <img src={Logo} width='102' alt="logo" />
-                </div>
+                <Logo />
                 <div className="ranking">
                     <img src={Trophy} width='56' alt="trophy" />
                     <h1>Ranking</h1>

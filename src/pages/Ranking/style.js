@@ -8,25 +8,16 @@ const Container = styled.div`
     align-items: center;
     height:100vh;
 
-    .logo {
+    .ranking {
         display: flex;
         align-items:center;
         h1 {
             font-family: 'Lexend Deca';
             font-style: normal;
-            font-weight: 200;
-            font-size: 64px;
-            line-height: 80px;
-            color: #000000;
-        }
-    }
-    .ranking {
-        display: flex;
-        align-items:center;
-        h1 {
             font-weight: 700;
             font-size: 36px;
             line-height: 45px;
+            color: #000000;
         }
     }
     .classification {
@@ -55,29 +46,5 @@ const Container = styled.div`
     }
 
 `
-const Header = styled.div`
-    display: flex;
-    flex-direction: row;
 
-    align-items: center;
-    justify-content: end;
-    margin: 0 auto;
-
-    height: 70px;
-    width:75%;
-    div {
-        display:flex;
-        flex-direction:row;
-        justify-content: space-between;
-
-        width:120px;
-        h1 {
-            font-family: 'Lexend Deca';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 18px;
-        }
-    }
-`
-export {Container, Header}
+export {Container}
