@@ -1,15 +1,14 @@
 import { Container } from "./style.js"
 
-import HeaderDisconnected from "../../components/HeaderDisconnected.js";
+import Header from "../../components/Header.js";
 import Logo from "../../components/Logo.js";
 
 import Trophy from '../../assets/Vector.png';
 
 export default function Ranking () {
-    
     return (
         <>
-            <HeaderDisconnected />
+            <Header />
             <Container>
                 <Logo />
                 <div className="ranking">

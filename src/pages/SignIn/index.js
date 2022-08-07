@@ -1,4 +1,4 @@
-import HeaderDisconnected from "../../components/HeaderDisconnected.js"
+import Header from "../../components/Header.js"
 import Logo from "../../components/Logo.js"
 import { Container } from "../SignUp/style.js"
 
@@ -31,7 +31,7 @@ export default function SignIn() {
     }
     return (
         <>
-        <HeaderDisconnected />
+        <Header />
         <Container>
             <Logo />
             <form>
