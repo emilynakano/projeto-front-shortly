@@ -71,8 +71,13 @@ const Container = styled.div`
             width:10%;
             box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
             border-radius: 0px 12px 12px 0px;
+            .trash-icon {
+                color:  red !important;
+                font-size: 22px !important;
+            }
         }
     }
+
 
 `
 export {Container}

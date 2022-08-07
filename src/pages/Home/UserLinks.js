@@ -31,14 +31,14 @@ export function UserLinks (props) {
                         {link.url}
                     </span>
                     <span >
-                        <a onClick={()=> atualization ?setAtualization(false) : setAtualization(true)} href={"https://project-back-shortly.herokuapp.com/urls/open/" + link.shortUrl} target="blank">{link.shortUrl}</a>
+                        <a onClick={()=> atualization ? setAtualization(false) : setAtualization(true)} href={"https://project-back-shortly.herokuapp.com/urls/open/" + link.shortUrl} target="blank">{link.shortUrl}</a>
                     </span>
                     <span>
                         Quantidade de visitantes: {link.visitCount}
                     </span>
                 </button>
                 <button className="trash">
-                        <h1>oi</h1>
+                    <ion-icon class="trash-icon" name="trash-outline"></ion-icon>
                 </button>
             </div>
         )}
