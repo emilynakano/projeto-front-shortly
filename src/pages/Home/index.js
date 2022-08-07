@@ -3,7 +3,7 @@ import Header from "../../components/Header.js"
 import { UserLinks } from "./UserLinks.js"
 import { Container } from "./style.js"
 
-import { useState, useContext, useEffect } from "react"
+import { useState, useContext } from "react"
 import UserContext from "../../contexts/UserContext.js"
 import axios from "axios"
 

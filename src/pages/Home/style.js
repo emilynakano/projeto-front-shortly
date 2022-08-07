@@ -35,10 +35,18 @@ const Container = styled.div`
         font-size: 14px;
         line-height: 18px;
         color: #FFFFFF;
-        max-width:30%;
+        width:30%;
         white-space:nowrap;
-        text-overflow: ellipsis;
         overflow:auto;
+        a {
+            font-family: 'Lexend Deca';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 18px;
+            color: #FFFFFF;
+            text-decoration:none;
+        }
     }
     .links{
         margin-top: 18px;

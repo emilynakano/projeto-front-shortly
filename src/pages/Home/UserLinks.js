@@ -4,6 +4,7 @@ import axios from "axios"
 export function UserLinks (props) {
     const {newLink} = props;
     const [userLink, setUserLink] = useState([])
+    const [atualization, setAtualization] = useState(false)
     const {user, setUser}= useContext(UserContext)
     useEffect(()=> {
         const config = {
@@ -17,7 +18,7 @@ export function UserLinks (props) {
             setUser({...user, name: res.data.name})
         })
         promise.catch(() => alert("nao deu"))
-    }, [newLink])
+    }, [newLink, atualization])
     if(userLink.length === 0) {
         return <h1>loading</h1>
     }
@@ -29,8 +30,8 @@ export function UserLinks (props) {
                     <span>
                         {link.url}
                     </span>
-                    <span>
-                        {link.shortUrl}
+                    <span >
+                        <a onClick={()=> atualization ?setAtualization(false) : setAtualization(true)} href={"https://project-back-shortly.herokuapp.com/urls/open/" + link.shortUrl} target="blank">{link.shortUrl}</a>
                     </span>
                     <span>
                         Quantidade de visitantes: {link.visitCount}
