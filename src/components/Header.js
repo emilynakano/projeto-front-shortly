@@ -8,9 +8,9 @@ export default function Header() {
     const {user, setUser} = useContext(UserContext)
     return (
         <>
-        {user.token ? 
+        {user.token && user.name ? 
             <HeaderToken>
-                <h1>Seja bem-vindo(a), Pessoa!</h1>
+                <h1>Seja bem-vindo(a), {user.name}!</h1>
                 <div>
                     <h1>Home</h1>
                     <h1 onClick={()=> navigate('/')}>Ranking</h1>
