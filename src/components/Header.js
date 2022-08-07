@@ -12,7 +12,7 @@ export default function Header() {
             <HeaderToken>
                 <h1>Seja bem-vindo(a), {user.name}!</h1>
                 <div>
-                    <h1>Home</h1>
+                    <h1 onClick={()=> navigate('/home')}>Home</h1>
                     <h1 onClick={()=> navigate('/')}>Ranking</h1>
                     <h1 onClick={()=> {
                         navigate('/');

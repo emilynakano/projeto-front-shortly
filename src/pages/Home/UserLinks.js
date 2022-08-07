@@ -22,6 +22,20 @@ export function UserLinks (props) {
     if(userLink.length === 0) {
         return <h1>loading</h1>
     }
+    async function DeleteUrl(props) {
+        const id = props;
+        const config = {
+            headers: {
+                Authorization: `Bearer ${user.token}`
+            }
+        }
+        try {
+            await axios.delete(`https://project-back-shortly.herokuapp.com/urls/${id}`, config);
+            atualization ? setAtualization(false) : setAtualization(true)
+        } catch {
+            alert("nao deu")
+        }
+    }
     return (
         <div className="links">
         {userLink.shortenedUrls.map((link)=>
@@ -38,7 +52,7 @@ export function UserLinks (props) {
                     </span>
                 </button>
                 <button className="trash">
-                    <ion-icon class="trash-icon" name="trash-outline"></ion-icon>
+                    <ion-icon onClick={() => DeleteUrl(link.id)} class="trash-icon" name="trash-outline"></ion-icon>
                 </button>
             </div>
         )}
