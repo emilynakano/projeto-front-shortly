@@ -25,8 +25,7 @@ export default function Ranking () {
                     <h1>Ranking</h1>
                 </div>
                 <div className="classification">
-                    <h1>1. Fulaninha - 32 links - 1.703.584 visualizações</h1>
-                    <h1>1. Fulaninhaaaaa - 32 links - 1.703.584 visualizações</h1>
+                    {users.map((user, index)=> <h1>{index + 1}. {user.name} - {user.linksCount} links - {user.visitCount} visualizações</h1>)}
                 </div>
                 <h2>Crie sua conta para usar nosso serviço!</h2>
             </Container>
