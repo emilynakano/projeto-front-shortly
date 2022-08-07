@@ -4,8 +4,17 @@ import Header from "../../components/Header.js";
 import Logo from "../../components/Logo.js";
 
 import Trophy from '../../assets/Vector.png';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Ranking () {
+    const [users, setUsers] = useState([])
+
+    useEffect(()=> {
+        const promise = axios.get('https://project-back-shortly.herokuapp.com/ranking');
+        promise.then((res) => setUsers(res.data))
+    }, [])
+    
     return (
         <>
             <Header />
