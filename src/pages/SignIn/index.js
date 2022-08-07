@@ -21,7 +21,7 @@ export default function SignIn() {
         try {
             const res = await axios.post("https://project-back-shortly.herokuapp.com/sign-in", {...userLogin})
             setUser({...user, token: res.data})
-            navigate('/')
+            navigate('/home')
         } catch {
             alert("Preencha os dados corretamente")
         }
