@@ -48,7 +48,7 @@ export function UserLinks (props) {
                         <a onClick={()=> atualization ? setAtualization(false) : setAtualization(true)} href={"https://project-back-shortly.herokuapp.com/urls/open/" + link.shortUrl} target="blank">{link.shortUrl}</a>
                     </span>
                     <span>
-                        Quantidade de visitantes: {link.visitCount}
+                        visitantes: {link.visitCount}
                     </span>
                 </button>
                 <button className="trash">

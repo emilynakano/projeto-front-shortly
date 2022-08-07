@@ -43,7 +43,13 @@ const HeaderToken = styled.div`
 
     height: 70px;
     width:75%;
-
+    h1 {
+            font-family: 'Lexend Deca';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+    }
     div {
         display:flex;
         flex-direction:row;
@@ -67,7 +73,7 @@ const HeaderWithoutToken = styled.div`
         flex-direction:row;
         justify-content: space-between;
 
-        width:120px;
+        width:140px;
         h1 {
             font-family: 'Lexend Deca';
             font-style: normal;
