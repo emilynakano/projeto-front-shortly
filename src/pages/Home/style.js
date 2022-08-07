@@ -35,6 +35,10 @@ const Container = styled.div`
         font-size: 14px;
         line-height: 18px;
         color: #FFFFFF;
+        max-width:30%;
+        white-space:nowrap;
+        text-overflow: ellipsis;
+        overflow:auto;
     }
     .links{
         margin-top: 18px;
