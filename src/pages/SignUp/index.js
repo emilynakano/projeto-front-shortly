@@ -66,7 +66,7 @@ export default function SignUp() {
                         value={user.confirmPassword} onChange={ChangeInput}
                     />
                     <button onClick={HandleSubmit} type={'submit'}>
-                    {loading ? <Rings color="white" height={80} width={75} /> : <span>Entrar</span>}
+                    {loading ? <Rings color="white" height={80} width={75} /> : <span>Cadastrar</span>}
                     </button>
                 </form>
             </Container>
