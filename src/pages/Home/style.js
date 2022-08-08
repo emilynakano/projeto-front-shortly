@@ -5,35 +5,6 @@ const Container = styled.div`
     align-items:center;
 
     width:100%;
-
-    .CreateLink {
-        margin-top:45px;
-        display: flex;
-        width:75%;
-        display:flex;
-        justify-content:space-between;
-        button {
-            cursor:pointer;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
-    }
-    input {
-        border: 1px solid rgba(120, 177, 89, 0.25);
-        box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
-        border-radius: 12px;
-        width: 65%;
-        height:60px;
-        padding: 20px;
-    }
-    button {
-        border:none;
-        background-color: #5D9040;
-        border-radius: 12px;
-        height:60px;
-        width:30%;
-    }
     span {
         font-family: 'Lexend Deca';
         font-style: normal;
@@ -55,6 +26,37 @@ const Container = styled.div`
             text-decoration:none;
         }
     }
+    .CreateLink {
+        margin-top:45px;
+        display: flex;
+        width:75%;
+        display:flex;
+        justify-content:space-between;
+        button {
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        span {
+            width:auto;
+        }
+    }
+    input {
+        border: 1px solid rgba(120, 177, 89, 0.25);
+        box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
+        border-radius: 12px;
+        width: 65%;
+        height:60px;
+        padding: 20px;
+    }
+    button {
+        border:none;
+        background-color: #5D9040;
+        border-radius: 12px;
+        height:60px;
+        width:30%;
+    }
     .links{
         margin-top: 18px;
         width:75%;
@@ -73,6 +75,7 @@ const Container = styled.div`
             border-radius: 12px 0px 0px 12px;
         }
         .trash {
+            padding: 0;
             display:flex;
             align-items:center;
             justify-content:center;
