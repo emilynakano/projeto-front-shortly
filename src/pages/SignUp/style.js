@@ -30,6 +30,10 @@ const Container = styled.div `
         width: 182px;
         height: 60px;
         margin: 0 auto;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        cursor:pointer;
     }
     span {
         font-family: 'Lexend Deca';

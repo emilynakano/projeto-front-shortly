@@ -49,6 +49,7 @@ const HeaderToken = styled.div`
             font-weight: 400;
             font-size: 14px;
             line-height: 18px;
+            cursor:pointer;
     }
     div {
         display:flex;
@@ -80,6 +81,7 @@ const HeaderWithoutToken = styled.div`
             font-weight: 400;
             font-size: 14px;
             line-height: 18px;
+            cursor:pointer;
         }
     }
 `

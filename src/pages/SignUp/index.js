@@ -6,7 +6,11 @@ import Logo from '../../components/Logo.js'
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
+import { Rings } from  'react-loader-spinner'
+
 export default function SignUp() {
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     const [user, setUser] = useState({
         name: '',
@@ -16,11 +20,13 @@ export default function SignUp() {
     })
     async function HandleSubmit (e) {
         e.preventDefault()
+        setLoading(true)
         try {
             await axios.post('https://project-back-shortly.herokuapp.com/sign-up', {...user})
             navigate('/sign-in')
         } catch {
             alert("Preencha os dados corretamente")
+            setLoading(false)
         }
     }
     function ChangeInput(e) {
@@ -60,7 +66,7 @@ export default function SignUp() {
                         value={user.confirmPassword} onChange={ChangeInput}
                     />
                     <button onClick={HandleSubmit} type={'submit'}>
-                        <span>Criar Conta</span>
+                    {loading ? <Rings color="white" height={80} width={75} /> : <span>Entrar</span>}
                     </button>
                 </form>
             </Container>

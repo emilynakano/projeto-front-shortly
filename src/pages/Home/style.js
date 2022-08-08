@@ -12,6 +12,12 @@ const Container = styled.div`
         width:75%;
         display:flex;
         justify-content:space-between;
+        button {
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
     }
     input {
         border: 1px solid rgba(120, 177, 89, 0.25);
@@ -37,7 +43,8 @@ const Container = styled.div`
         color: #FFFFFF;
         width:30%;
         white-space:nowrap;
-        overflow:auto;
+        overflow:hidden;
+        text-overflow:ellipsis;
         a {
             font-family: 'Lexend Deca';
             font-style: normal;
@@ -66,12 +73,16 @@ const Container = styled.div`
             border-radius: 12px 0px 0px 12px;
         }
         .trash {
+            display:flex;
+            align-items:center;
+            justify-content:center;
             border: 1px solid rgba(120, 177, 89, 0.25);
             background-color: #FFFFFF;
             width:10%;
             box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
             border-radius: 0px 12px 12px 0px;
             .trash-icon {
+                cursor:pointer;
                 color:  red !important;
                 font-size: 22px !important;
             }

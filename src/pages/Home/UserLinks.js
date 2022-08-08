@@ -1,10 +1,13 @@
 import UserContext from "../../contexts/UserContext"
 import { useContext, useEffect, useState } from "react"
-import axios from "axios"
+import axios from "axios";
+import { Rings } from  'react-loader-spinner'
+
 export function UserLinks (props) {
+    const [loading, setLoading] = useState(false)
     const {newLink} = props;
     const [userLink, setUserLink] = useState([])
-    const [atualization, setAtualization] = useState(false)
+    const [atualization, setAtualization] = useState(true)
     const {user, setUser}= useContext(UserContext)
     useEffect(()=> {
         const config = {
@@ -20,9 +23,10 @@ export function UserLinks (props) {
         promise.catch(() => alert("nao deu"))
     }, [newLink, atualization])
     if(userLink.length === 0) {
-        return <h1>loading</h1>
+        return <Rings color="black" height={80} width={900} />
     }
     async function DeleteUrl(props) {
+        setLoading(true)
         const id = props;
         const config = {
             headers: {
@@ -32,12 +36,14 @@ export function UserLinks (props) {
         try {
             await axios.delete(`https://project-back-shortly.herokuapp.com/urls/${id}`, config);
             atualization ? setAtualization(false) : setAtualization(true)
+            setLoading(false)
         } catch {
-            alert("nao deu")
+            alert("erro ao deleter")
+            setLoading(false)
         }
     }
     return (
-        <div className="links">
+        <div className="links"> 
         {userLink.shortenedUrls.map((link)=>
             <div className="link">
                 <button>
@@ -52,7 +58,9 @@ export function UserLinks (props) {
                     </span>
                 </button>
                 <button className="trash">
+                    {loading ? <Rings color="red" height={80} width={70} /> :
                     <ion-icon onClick={() => DeleteUrl(link.id)} class="trash-icon" name="trash-outline"></ion-icon>
+                    }
                 </button>
             </div>
         )}
