@@ -8,6 +8,9 @@ import GlobalStyles from './themes/globalStyles.js';
 import { useState } from 'react';
 import UserContext from './contexts/UserContext.js'
 import Home  from './pages/Home/index.js';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function App () {
     const [user, setUser] = useState({
         name: '',
@@ -16,6 +19,7 @@ export default function App () {
     return (
         <BrowserRouter>
             <GlobalStyles />
+            <ToastContainer autoClose={3000} />
             <UserContext.Provider value={{user, setUser}}>
                 <Routes>
                     <Route path='/' element={<Ranking />} />

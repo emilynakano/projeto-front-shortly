@@ -8,6 +8,7 @@ import UserContext from "../../contexts/UserContext.js"
 import axios from "axios"
 
 import { Rings } from  'react-loader-spinner'
+import { toast } from "react-toastify"
 
 export default function Home () {
     const [loading, setLoading] = useState(false)
@@ -26,10 +27,11 @@ export default function Home () {
             promise.then((res) => {
                 setNewLInk(res.data);
                 setUrl('');
+                toast.success("Link criado com sucesso!");
                 setLoading(false)
             })
             promise.catch(()=> {
-                alert("preencha os dados corretamente")
+                toast.error("Preencha o campo com uma url válida!");
                 setLoading(false)
             })
 

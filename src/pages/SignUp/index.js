@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 import { Rings } from  'react-loader-spinner'
+import { toast } from "react-toastify";
 
 export default function SignUp() {
     const [loading, setLoading] = useState(false)
@@ -25,7 +26,7 @@ export default function SignUp() {
             await axios.post('https://project-back-shortly.herokuapp.com/sign-up', {...user})
             navigate('/sign-in')
         } catch {
-            alert("Preencha os dados corretamente")
+            toast.error("Preencha os dados corretamente!");
             setLoading(false)
         }
     }

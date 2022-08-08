@@ -8,7 +8,7 @@ import axios from "axios";
 import UserContext from "../../contexts/UserContext.js";
 
 import { Rings } from  'react-loader-spinner'
-
+import { toast } from "react-toastify";
 
 export default function SignIn() {
     const [loading, setLoading] = useState(false)
@@ -26,8 +26,8 @@ export default function SignIn() {
             setUser({...user, token: res.data})
             navigate('/home')
         } catch {
-           alert("preencha os dados corretamente");
-           setLoading(false)
+            toast.error("Preencha os dados corretamente!");
+            setLoading(false)
         }
     }
     function ChangeInput(e) {

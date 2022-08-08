@@ -2,6 +2,7 @@ import UserContext from "../../contexts/UserContext"
 import { useContext, useEffect, useState } from "react"
 import axios from "axios";
 import { Rings } from  'react-loader-spinner'
+import { toast } from "react-toastify";
 
 export function UserLinks (props) {
     const [loading, setLoading] = useState(false)
@@ -20,7 +21,7 @@ export function UserLinks (props) {
             setUserLink(res.data)
             setUser({...user, name: res.data.name})
         })
-        promise.catch(() => alert("nao deu"))
+        promise.catch(() => toast.error("Autentifique-se, novamente!"))
     }, [newLink, atualization])
     if(userLink.length === 0) {
         return <Rings color="black" height={80} width={900} />
@@ -36,9 +37,10 @@ export function UserLinks (props) {
         try {
             await axios.delete(`https://project-back-shortly.herokuapp.com/urls/${id}`, config);
             atualization ? setAtualization(false) : setAtualization(true)
+            toast.success("Link deletado com sucesso!");
             setLoading(false)
         } catch {
-            alert("erro ao deleter")
+            toast.error("erro ao deleter!");
             setLoading(false)
         }
     }
